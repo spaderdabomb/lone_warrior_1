@@ -90,7 +90,7 @@ class SpriteCache():
     def _load_textures():
         for filename in os.listdir(SPRITES_PATH):
             if filename.endswith(".png"):
-                cache_sprite = arcade.Sprite(os.path.join(SPRITES_PATH, filename), calculate_hit_box=False)
+                cache_sprite = arcade.Sprite(os.path.join(SPRITES_PATH, filename), RESOLUTION_SCALING, calculate_hit_box=False)
                 SpriteCache.FILE_INDEX += 1
 
     @staticmethod

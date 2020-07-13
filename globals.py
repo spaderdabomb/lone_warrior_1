@@ -1,16 +1,18 @@
 import math
+import os
 
-RESOLUTION_SCALING = 1
+RESOLUTION_SCALING = 0.5
 SCREEN_WIDTH = 1920*RESOLUTION_SCALING
 SCREEN_HEIGHT = 1080*RESOLUTION_SCALING
 SCREEN_BORDER_PADDING = 10*RESOLUTION_SCALING
 FRAME_RATE = 60
 SCREEN_TITLE = "Lone Warrior"
 
-FILE_PATH = r'C:\Users\jpdodson\Box\Programming\Python\PycharmProjects\lone_warrior_1'
-SPRITES_PATH =r'C:\Users\jpdodson\Box\Programming\Python\PycharmProjects\lone_warrior_1\Assets\Sprites'
-SPRITESHEETS_PATH =r'C:\Users\jpdodson\Box\Programming\Python\PycharmProjects\lone_warrior_1\Assets\Spritesheets'
-AUDIO_PATH =r'C:\Users\jpdodson\Box\Programming\Python\PycharmProjects\lone_warrior_1\Assets\Audio'
+
+FILE_PATH = os.getcwd()
+SPRITES_PATH = os.path.join(FILE_PATH, 'Assets', 'Sprites')
+SPRITESHEETS_PATH = os.path.join(FILE_PATH, 'Assets', 'Spritesheets')
+AUDIO_PATH = os.path.join(FILE_PATH, 'Assets', 'Audio')
 
 GROUND_LEVEL = (1080-805)*RESOLUTION_SCALING
 GRAVITY = 1

@@ -35,7 +35,7 @@ class MainMenuView(arcade.View):
 
         # Setup background UI
         arcade.set_background_color(arcade.color.WHITE)
-        self.main_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_main.png'), calculate_hit_box=False)
+        self.main_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_main.png'), RESOLUTION_SCALING, calculate_hit_box=False)
 
         self.main_menu_background.center_x = SCREEN_WIDTH/2
         self.main_menu_background.center_y = SCREEN_HEIGHT/2
@@ -74,7 +74,7 @@ class SettingsMenuView(arcade.View):
 
         # Setup background UI
         arcade.set_background_color(arcade.color.WHITE)
-        self.settings_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_settings.png'), calculate_hit_box=False)
+        self.settings_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_settings.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.settings_menu_background.center_x = SCREEN_WIDTH/2
         self.settings_menu_background.center_y = SCREEN_HEIGHT/2
 
@@ -112,7 +112,7 @@ class AchievementsMenuView(arcade.View):
 
         # Setup background UI
         arcade.set_background_color(arcade.color.WHITE)
-        self.achievements_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_achievements.png'), calculate_hit_box=False)
+        self.achievements_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_achievements.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.achievements_menu_background.center_x = SCREEN_WIDTH / 2
         self.achievements_menu_background.center_y = SCREEN_HEIGHT / 2
 
@@ -150,7 +150,7 @@ class HighscoresMenuView(arcade.View):
 
         # Setup background UI
         arcade.set_background_color(arcade.color.WHITE)
-        self.highscores_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_highscores.png'), calculate_hit_box=False)
+        self.highscores_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_highscores.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.highscores_menu_background.center_x = SCREEN_WIDTH/2
         self.highscores_menu_background.center_y = SCREEN_HEIGHT/2
 
@@ -188,7 +188,7 @@ class StartMenuView(arcade.View):
 
         # Setup background UI
         arcade.set_background_color(arcade.color.WHITE)
-        self.start_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_start.png'), calculate_hit_box=False)
+        self.start_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_start.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.start_menu_background.center_x = SCREEN_WIDTH/2
         self.start_menu_background.center_y = SCREEN_HEIGHT/2
 
@@ -243,11 +243,11 @@ class LoadingMenuView(arcade.View):
     def setup(self):
         # Setup background UI
         arcade.set_background_color(arcade.color.WHITE)
-        self.loading_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_loading.png'), calculate_hit_box=False)
+        self.loading_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_loading.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.loading_menu_background.center_x = SCREEN_WIDTH / 2
         self.loading_menu_background.center_y = SCREEN_HEIGHT / 2
 
-        self.loading_screen_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'loading_screen_container.png'), calculate_hit_box=False)
+        self.loading_screen_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'loading_screen_container.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.loading_screen_container.center_x = SCREEN_WIDTH / 2
         self.loading_screen_container.center_y = (1080-598)*RESOLUTION_SCALING
         self.loading_screen_container_color = (45, 221, 99)

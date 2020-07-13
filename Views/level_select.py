@@ -37,16 +37,16 @@ class LevelSelectView(arcade.View):
 
         # Setup background UI
         arcade.set_background_color(arcade.color.WHITE)
-        self.level_select_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_level_select.png'), calculate_hit_box=False)
+        self.level_select_menu_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_level_select.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.level_select_menu_background.center_x = SCREEN_WIDTH/2
         self.level_select_menu_background.center_y = SCREEN_HEIGHT/2
 
         self.door_list = arcade.SpriteList()
-        door_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), calculate_hit_box=False)
-        door_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), calculate_hit_box=False)
-        door_3 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), calculate_hit_box=False)
-        door_4 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), calculate_hit_box=False)
-        door_5 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), calculate_hit_box=False)
+        door_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), RESOLUTION_SCALING, calculate_hit_box=False)
+        door_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), RESOLUTION_SCALING, calculate_hit_box=False)
+        door_3 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), RESOLUTION_SCALING, calculate_hit_box=False)
+        door_4 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), RESOLUTION_SCALING, calculate_hit_box=False)
+        door_5 = arcade.Sprite(os.path.join(SPRITES_PATH, 'level_select_door.png'), RESOLUTION_SCALING, calculate_hit_box=False)
 
         x = 329*RESOLUTION_SCALING
         y = (1080-763)*RESOLUTION_SCALING
@@ -68,7 +68,7 @@ class LevelSelectView(arcade.View):
         self.door_list.extend([door_1, door_2, door_3, door_4, door_5])
 
         self.platform_spritelist = arcade.SpriteList(use_spatial_hash=True)
-        self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), calculate_hit_box=False)
+        self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.platform_0.center_x = SCREEN_WIDTH / 2
         self.platform_0.center_y = (1080 - 880) * RESOLUTION_SCALING
         self.platform_spritelist.append(self.platform_0)

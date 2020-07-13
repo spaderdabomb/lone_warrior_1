@@ -68,7 +68,7 @@ class EnemySlime(arcade.Sprite):
                              [hit_box_width, -hit_box_height], [-hit_box_width, -hit_box_height]]
         self.set_hit_box(self.enemy_hitbox)
 
-        self.hp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_small.png'), 0.5, calculate_hit_box=False)
+        self.hp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_small.png'), 0.5*RESOLUTION_SCALING, calculate_hit_box=False)
         self.hp_container.center_x = self.center_x
         self.hp_container.center_y = self.center_y + self.height*2/3
         self.hp_color = (228, 52, 52)

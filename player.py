@@ -59,7 +59,7 @@ class Player(arcade.Sprite):
                              [self.width, -1.75*self.height], [-self.width, -1.75*self.height]]
         self.set_hit_box(self.player_hitbox)
 
-        self.hp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_small.png'), 0.5, calculate_hit_box=False)
+        self.hp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_small.png'), 0.5*RESOLUTION_SCALING, calculate_hit_box=False)
         self.hp_container.center_x = self.center_x
         self.hp_container.center_y = self.center_y + self.height*3/4
         self.hp_color = (228, 52, 52)

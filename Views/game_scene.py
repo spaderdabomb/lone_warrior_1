@@ -65,17 +65,17 @@ class GameSceneView(arcade.View):
         self.current_level = Level(self.world_num, self.stage_num, self)
 
         # Labels
-        self.hp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_big.png'), calculate_hit_box=False)
+        self.hp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_big.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.hp_container.center_x = 1781*RESOLUTION_SCALING
         self.hp_container.center_y = (1080-100)*RESOLUTION_SCALING
-        self.hp_heart = arcade.Sprite(os.path.join(SPRITES_PATH, 'heart_game_scene.png'), calculate_hit_box=False)
+        self.hp_heart = arcade.Sprite(os.path.join(SPRITES_PATH, 'heart_game_scene.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.hp_heart.center_x = 1617*RESOLUTION_SCALING
         self.hp_heart.center_y = (1080-100)*RESOLUTION_SCALING
         self.hp_color = [228, 52, 52]
-        self.xp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_big.png'), calculate_hit_box=False)
+        self.xp_container = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_container_big.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.xp_container.center_x = 1781*RESOLUTION_SCALING
         self.xp_container.center_y = (1080-46)*RESOLUTION_SCALING
-        self.xp_label = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_label.png'), calculate_hit_box=False)
+        self.xp_label = arcade.Sprite(os.path.join(SPRITES_PATH, 'XP_label.png'), RESOLUTION_SCALING, calculate_hit_box=False)
         self.xp_label.center_x = 1619*RESOLUTION_SCALING
         self.xp_label.center_y = (1080-46)*RESOLUTION_SCALING
         self.xp_to_go_text = str(self.player.current_xp) + '/' + str(XP_TO_NEXT_LEVEL_LIST[self.player.current_level - 1])
@@ -91,7 +91,7 @@ class GameSceneView(arcade.View):
         tutorials_passed_list = GameData.data['tutorials_passed']
         if tutorials_passed_list[2]:
             for i in range(6):
-                shuriken = arcade.Sprite(os.path.join(SPRITES_PATH, 'shuriken_power_up_bar.png'))
+                shuriken = arcade.Sprite(os.path.join(SPRITES_PATH, 'shuriken_power_up_bar.png'), RESOLUTION_SCALING)
                 shuriken.center_x = 53*RESOLUTION_SCALING + (47*i)*RESOLUTION_SCALING
                 shuriken.center_y = (1080-98)*RESOLUTION_SCALING
                 shuriken.alpha = 0.5*255
@@ -355,19 +355,19 @@ class Level:
         # Level specific
         if self.world_num == 0:
             # Level background
-            self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_training_room.png'), calculate_hit_box=False)
+            self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'menu_training_room.png'), RESOLUTION_SCALING, calculate_hit_box=False)
             self.level_background.center_x = SCREEN_WIDTH/2
             self.level_background.center_y = SCREEN_HEIGHT/2
             self.level_background_sprite_list.append(self.level_background)
 
             self.platform_spritelist = arcade.SpriteList(use_spatial_hash=True)
-            self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), calculate_hit_box=False)
+            self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), RESOLUTION_SCALING, calculate_hit_box=False)
             self.platform_0.center_x = SCREEN_WIDTH/2
             self.platform_0.center_y = (1080-880)*RESOLUTION_SCALING
-            self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), calculate_hit_box=False)
+            self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING, calculate_hit_box=False)
             self.platform_1.center_x = 407*RESOLUTION_SCALING
             self.platform_1.center_y = (1080-597)*RESOLUTION_SCALING
-            self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), calculate_hit_box=False)
+            self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING, calculate_hit_box=False)
             self.platform_2.center_x = 1508*RESOLUTION_SCALING
             self.platform_2.center_y = (1080-597)*RESOLUTION_SCALING
             self.platform_spritelist.extend([self.platform_0, self.platform_1, self.platform_2])
@@ -375,25 +375,25 @@ class Level:
         elif self.world_num == 1:
             if self.stage_num == 1:
                 # Level background
-                self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'world_1_1.png'), calculate_hit_box=False)
+                self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'world_1_1.png'), RESOLUTION_SCALING, calculate_hit_box=False)
                 self.level_background.center_x = SCREEN_WIDTH/2
                 self.level_background.center_y = SCREEN_HEIGHT/2
                 self.level_background_sprite_list.append(self.level_background)
 
                 self.platform_spritelist = arcade.SpriteList(use_spatial_hash=True)
-                self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), calculate_hit_box=False)
+                self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), RESOLUTION_SCALING, calculate_hit_box=False)
                 self.platform_0.center_x = SCREEN_WIDTH/2
                 self.platform_0.center_y = (1080-0)*RESOLUTION_SCALING
-                self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), calculate_hit_box=False)
+                self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING, calculate_hit_box=False)
                 self.platform_1.center_x = 1600*RESOLUTION_SCALING
                 self.platform_1.center_y = (1080-284)*RESOLUTION_SCALING
-                self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), calculate_hit_box=False)
+                self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING, calculate_hit_box=False)
                 self.platform_2.center_x = 318*RESOLUTION_SCALING
                 self.platform_2.center_y = (1080-282)*RESOLUTION_SCALING
-                self.platform_3 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), calculate_hit_box=False)
+                self.platform_3 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING, calculate_hit_box=False)
                 self.platform_3.center_x = 921*RESOLUTION_SCALING
                 self.platform_3.center_y = (1080-560)*RESOLUTION_SCALING
-                self.platform_4 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), calculate_hit_box=False)
+                self.platform_4 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground.png'), RESOLUTION_SCALING, calculate_hit_box=False)
                 self.platform_4.center_x = SCREEN_WIDTH/2
                 self.platform_4.center_y = (1080-876)*RESOLUTION_SCALING
                 self.platform_spritelist.extend([self.platform_0, self.platform_1, self.platform_2, self.platform_3,
@@ -417,30 +417,30 @@ class Level:
                 self.spawn_object_list = [SpawnObject(spawn_object_position_list[i], spawn_object_time_list[i],
                                                   spawn_object_type_list[i]) for i in range(len(spawn_object_position_list))]
             elif self.stage_num == 2:
-                self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'world_1_2.png'),
+                self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'world_1_2.png'), RESOLUTION_SCALING,
                                                       calculate_hit_box=False)
                 self.level_background.center_x = SCREEN_WIDTH / 2
                 self.level_background.center_y = SCREEN_HEIGHT / 2
                 self.level_background_sprite_list.append(self.level_background)
 
                 self.platform_spritelist = arcade.SpriteList(use_spatial_hash=True)
-                self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground_2.png'),
+                self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground_2.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_0.center_x = SCREEN_WIDTH / 2
                 self.platform_0.center_y = (1080 - 0) * RESOLUTION_SCALING
-                self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'),
+                self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_1.center_x = 121 * RESOLUTION_SCALING
                 self.platform_1.center_y = (1080 - 398) * RESOLUTION_SCALING
-                self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'),
+                self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_2.center_x = 960 * RESOLUTION_SCALING
                 self.platform_2.center_y = (1080 - 559) * RESOLUTION_SCALING
-                self.platform_3 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'),
+                self.platform_3 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_3.center_x = 1805 * RESOLUTION_SCALING
                 self.platform_3.center_y = (1080 - 386) * RESOLUTION_SCALING
-                self.platform_4 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground_2.png'),
+                self.platform_4 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground_2.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_4.center_x = SCREEN_WIDTH / 2
                 self.platform_4.center_y = (1080 - 876) * RESOLUTION_SCALING
@@ -459,22 +459,22 @@ class Level:
                                                       spawn_object_type_list[i]) for i in
                                           range(len(spawn_object_position_list))]
             elif self.stage_num == 3:
-                self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'world_1_3.png'),
+                self.level_background = arcade.Sprite(os.path.join(SPRITES_PATH, 'world_1_3.png'), RESOLUTION_SCALING,
                                                       calculate_hit_box=False)
                 self.level_background.center_x = SCREEN_WIDTH / 2
                 self.level_background.center_y = SCREEN_HEIGHT / 2
                 self.level_background_sprite_list.append(self.level_background)
 
                 self.platform_spritelist = arcade.SpriteList(use_spatial_hash=True)
-                self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'),
+                self.platform_0 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_0.center_x = 490 * RESOLUTION_SCALING
                 self.platform_0.center_y = (1080 - 546) * RESOLUTION_SCALING
-                self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'),
+                self.platform_1 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_1.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_1.center_x = 1459 * RESOLUTION_SCALING
                 self.platform_1.center_y = (1080 - 546) * RESOLUTION_SCALING
-                self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground_2.png'),
+                self.platform_2 = arcade.Sprite(os.path.join(SPRITES_PATH, 'brick_platform_ground_2.png'), RESOLUTION_SCALING,
                                                 calculate_hit_box=False)
                 self.platform_2.center_x = SCREEN_WIDTH / 2
                 self.platform_2.center_y = (1080 - 876) * RESOLUTION_SCALING
@@ -510,7 +510,7 @@ class Level:
         # All level stuff
         tutorials_passed_list = GameData.data['tutorials_passed']
         if tutorials_passed_list[2]:
-            powerup_bar_text = arcade.Sprite(os.path.join(SPRITES_PATH, 'powerup_bar_text.png'))
+            powerup_bar_text = arcade.Sprite(os.path.join(SPRITES_PATH, 'powerup_bar_text.png'), RESOLUTION_SCALING, calculate_hit_box=False)
             powerup_bar_text.center_x = 161*RESOLUTION_SCALING
             powerup_bar_text.center_y = (1080-45)*RESOLUTION_SCALING
             self.level_background_sprite_list.append(powerup_bar_text)
